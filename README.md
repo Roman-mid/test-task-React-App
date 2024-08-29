@@ -25,7 +25,7 @@ This is a small web application developed as part of a test task to demonstrate 
 ### Local launch
 
 1. Clone the repository:
-   git clone https://github.com/yourusername/test-task.git
+   git clone https://github.com/Roman-mid/test-task-React-App.git
 
 2. Go to the project directory:
    cd test-task
