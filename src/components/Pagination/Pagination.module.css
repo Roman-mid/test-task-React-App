@@ -1,0 +1,4 @@
+.btn {
+  border: 1 px solid var(--primary-color);
+  border-radius: 2px;
+}

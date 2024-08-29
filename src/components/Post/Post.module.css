@@ -1,0 +1,8 @@
+.title::first-letter,
+.body::first-letter {
+  text-transform: uppercase;
+}
+
+.title {
+  margin-bottom: 20px;
+}

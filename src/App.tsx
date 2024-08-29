@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, lazy } from "react";
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import {
+  useGetPostsByNameQuery,
+  // useGetUserByNameQuery,
+} from "./redux/services/getApi";
+import Loading from "./components/Loading/Loading";
 
-function App() {
+const App: React.FC = () => {
+  const Layout = lazy(() => import("./components/Layout/Layout"));
+  const Home = lazy(() => import("./pages/Home/Home"));
+  const SignIn = lazy(() => import("./pages/SignIn/SignIn"));
+  const PostPage = lazy(() => import("./pages/Post/PostPage"));
+  const NotFound = lazy(() => import("./pages/NotFound/NotFound"));
+
+  useGetPostsByNameQuery("posts");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="signIn" element={<SignIn />} />
+          <Route path="post/:id" element={<PostPage />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
   );
-}
+};
 
 export default App;

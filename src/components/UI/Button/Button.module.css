@@ -1,0 +1,27 @@
+.btnLg {
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.3s;
+  display: block;
+  background: #fff;
+  width: 100%;
+  border: 1px solid var(--primary-color);
+  font-size: 18px;
+}
+
+.btnLg:hover {
+  background: var(--primary-color);
+  border: 1px solid #fff;
+}
+
+.btnSm {
+  background: var(--primary-color);
+  border-radius: 10px;
+  padding: 5px 20px;
+  transition: 0.3s;
+}
+
+.btnSm:hover {
+  background: #b8b7b7;
+}
