@@ -28,7 +28,7 @@ const Header: React.FC = () => {
       setModalIsOpen(false);
       showToast(TYPE_TOAST.INFO, "You are logget out");
       localStorage.removeItem("user");
-      document.body.classList.add("lock");
+      document.body.classList.remove("lock");
     }
   };
   const singIn = () => {
