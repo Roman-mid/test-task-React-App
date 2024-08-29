@@ -11,8 +11,10 @@ const Home: React.FC = () => {
 
   const [searchValue, setSearchValue] = React.useState<string>("");
 
-  const sortedPosts = posts?.filter((post) =>
-    post.title.toLowerCase().includes(searchValue.toLowerCase())
+  const sortedPosts = posts?.filter(
+    (post) =>
+      post.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+      post.body.toLowerCase().includes(searchValue.toLowerCase())
   );
 
   const cardItems = sortedPosts?.map((post) => (
