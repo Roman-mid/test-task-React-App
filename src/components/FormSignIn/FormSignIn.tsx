@@ -2,10 +2,10 @@ import React from "react";
 import Button from "../UI/Button/Button";
 import { useNavigate } from "react-router-dom";
 import { useLazyGetUserByNameQuery } from "../../redux/services/getApi";
-import { showToast } from "../Toast/toastSuccess";
-import style from "./FormSignIn.module.css";
+import { TYPE_TOAST, showToast } from "../Toast/toastSuccess";
 import Loading from "../Loading/Loading";
 import Input from "../UI/Input/Input";
+import style from "./FormSignIn.module.css";
 
 const FormSignIn: React.FC = () => {
   const [inputValue, setInputValue] = React.useState<string>("");
@@ -24,14 +24,14 @@ const FormSignIn: React.FC = () => {
     }
 
     if (isError) {
-      showToast("error", "Error! Try again.");
+      showToast(TYPE_TOAST.ERROR, "Error! Try again.");
       return;
     }
 
     const res = await trigger(userName);
 
     if (!res.data?.length) {
-      showToast("error", "Name is not correct");
+      showToast(TYPE_TOAST.ERROR, "Name is not correct");
     } else {
       localStorage.setItem("user", userName);
       navigate("/");

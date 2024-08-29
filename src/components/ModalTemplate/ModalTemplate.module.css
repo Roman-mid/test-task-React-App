@@ -1,0 +1,30 @@
+.modal {
+  width: 300px;
+  padding: 50px 10px;
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #000;
+  transition: 0.3s;
+}
+
+.closeBtn:hover {
+  color: tomato;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}

@@ -25,3 +25,8 @@
 .btnSm:hover {
   background: #b8b7b7;
 }
+
+.btnSm:disabled,
+.btnLg:disabled {
+  pointer-events: none;
+}

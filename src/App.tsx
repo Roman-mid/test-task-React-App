@@ -1,11 +1,8 @@
 import React, { Suspense, lazy } from "react";
-import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import {
-  useGetPostsByNameQuery,
-  // useGetUserByNameQuery,
-} from "./redux/services/getApi";
+import { useGetPostsByNameQuery } from "./redux/services/getApi";
 import Loading from "./components/Loading/Loading";
+import "./App.css";
 
 const App: React.FC = () => {
   const Layout = lazy(() => import("./components/Layout/Layout"));

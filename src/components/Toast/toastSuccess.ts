@@ -1,11 +1,12 @@
 import { Bounce, ToastOptions, toast } from "react-toastify";
 
-enum Type {}
+export enum TYPE_TOAST {
+  SUCCESS = "success",
+  INFO = "info",
+  ERROR = "error",
+}
 
-export const showToast = (
-  type: "success" | "info" | "error",
-  message: string
-) => {
+export const showToast = (type: TYPE_TOAST, message: string) => {
   const options: ToastOptions = {
     position: "top-center",
     autoClose: 3000,
@@ -18,13 +19,13 @@ export const showToast = (
     transition: Bounce,
   };
 
-  if (type === "success") {
+  if (type === TYPE_TOAST.SUCCESS) {
     toast.success(message, options);
   }
-  if (type === "info") {
+  if (type === TYPE_TOAST.INFO) {
     toast.info(message, options);
   }
-  if (type === "error") {
+  if (type === TYPE_TOAST.ERROR) {
     toast.error(message, options);
   }
 };

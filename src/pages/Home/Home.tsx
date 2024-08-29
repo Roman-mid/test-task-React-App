@@ -36,8 +36,6 @@ const Home: React.FC = () => {
           {cardItems?.length === 0 && <h1> We can't find anything</h1>}
 
           <div className={style.cardWrap}>{cardItems}</div>
-          {/* <button onClick={onclickPagination}>2</button> */}
-          {/* <Pagination length={postsArr} onClick={onclickPagination} /> */}
         </div>
       </section>
     </>

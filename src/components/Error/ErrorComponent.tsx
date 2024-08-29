@@ -1,6 +1,6 @@
 import React from "react";
-import style from "./ErrorComponent.module.css";
 import { ErrorProps } from "./Error.types";
+import style from "./ErrorComponent.module.css";
 
 const defaultText = "Something was wrong! Sorry. Try agin";
 
